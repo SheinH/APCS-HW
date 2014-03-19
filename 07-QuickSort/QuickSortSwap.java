@@ -8,6 +8,9 @@ public class QuickSortSwap{
 			swap(a,low,(low + high ) / 2);
 			int left = low + 1;
 			int right = high - 1;
+			System.out.println("Array: " + Arrays.toString(a));
+			System.out.println("Low: " + low);
+			System.out.println("High: " + high);
 			while(left < right){
 				if(a[right] >= a[low]){
 					right--;
@@ -22,8 +25,9 @@ public class QuickSortSwap{
 			if(a[left] < a[low]){
 				swap(a,left,low);
 			}
+			System.out.println(left);
 			quickSort(a,low,left);
-			quickSort(a,left + 1,high);
+			quickSort(a,left,high);
 		}
 	}
 	private static void swap(int[] x, int a, int b){
@@ -32,13 +36,12 @@ public class QuickSortSwap{
 		x[b] = temp;
 	}
 	public static void main(String[] args){
-		int[] a = new int[100];
-		for(int i = 0; i < a.length; i++){
+		int[] a = new int[Integer.parseInt(args[0])];
+		for(int i = 0;i < a.length;i++){
 			a[i] = (int)(Math.random() * 100);
 		}
 		System.out.println(Arrays.toString(a));
 		quickSort(a);
-		System.out.println("Sorted:");
-		System.out.print(Arrays.toString(a));
+		System.out.println(Arrays.toString(a));
 	}
 }
