@@ -11,13 +11,22 @@ public class MyLinkedList{
 		}
 	}
 	public void add(String d){
-		Node n = new Node(d);
-		n.setNext(head);
-		head = n;
+		if(head == null){
+			add(0,d);
+		}
+		else{
+			Node n = head;
+			while(n.getNext() != null){
+				n = n.getNext();
+			}
+			n.setNext(new Node(d));
+		}
 	}
 	public void add(int i,String s){
 		if(i == 0){
-			add(s);
+			Node n = new Node(s);
+			n.setNext(head);
+			head = n;
 		}
 		else{
 			Node n = head;
@@ -100,16 +109,9 @@ public class MyLinkedList{
 		return s;
 	}
 	public static void main(String[] args){
-		MyLinkedList a = new MyLinkedList(args);
-		List b = Arrays.asList(args);
+		MyLinkedList a = new MyLinkedList();
+		a.add("1");
+		a.add("2");
 		System.out.println(a);
-		System.out.println(b);
-		a.add(2,"Index 2");
-		System.out.println(a);
-		System.out.println(a.get(0));
-		a.remove(2);
-		System.out.println(a);
-		System.out.println(a.find("whatup"));
-		System.out.println(a.length());
 	}
 }
