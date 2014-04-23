@@ -1,0 +1,7 @@
+1. Critter implements act(), processActors(), getMoveLocations(), selectMoveLocation(), and makeMove().
+2. All critters can act, process actors, get move loactions, select movelocations, and can be made to move to a location.
+3. getActors should not be overwritten because it is a basic function, to return all adjecent adjecent actors and overwriting this would not do anything useful.
+4. Actors can be deleted (eaten) or left alone.
+5. For a critter to move, you have to first call getMoveLocations() to get all possible adjecent locations that a critter can move to. Afterwards, you can run the selectMovelocation() method on these locations to select a location to move to, then, using makeMove() you command the bug to move to said location.
+6. Critter does not need a constructor. The constructor that it inherits from its superclass, Actor, is sufficient.
+7. 
