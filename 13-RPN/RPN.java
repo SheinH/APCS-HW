@@ -14,7 +14,7 @@ public class RPN{
 			else if(i.equals("-")){
 				double n1 = numbers.pop();
 				double n2 = numbers.pop();
-				numbers.push(n1 - n2);
+				numbers.push(n2 - n1);
 			}
 			else if(i.equals("x")){
 				double n1 = numbers.pop();
@@ -28,7 +28,7 @@ public class RPN{
 			else if(i.equals("/")){
 				double n1 = numbers.pop();
 				double n2 = numbers.pop();
-				numbers.push(n1 / n2);
+				numbers.push(n2 / n1);
 			}
 			else{
 				numbers.push(Double.parseDouble(i));
