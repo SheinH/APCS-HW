@@ -41,4 +41,10 @@ public class BinarySearchTree{
 			}
 		}
 	}
+	public void remove(Node x){
+		Node left = x.getLeft();
+		Node right = x.getRight();
+		x = null;
+		insert(left);
+		insert(right);
 }
